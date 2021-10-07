@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>让我帮你百度一下 | Let Me Baidu That For You</title>
+
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/base64.min.js"></script>
+    <script src="js/clipboard.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body onblur="typeInfoText()">
+    <section id="search">
+        <div class="search-header">
+            <h2>
+                <span class="let-me">让我帮你</span>
+                <img src="img/baidu_logo.png" alt="百度" title="让我帮你百度一下" />
+                <span class="for-you">一下</span>
+            </h2>
+        </div>
+
+        <form id="search-form">
+            <div class="search-form-group">
+                <div class="search-form-input">
+                    <input type="search" id="kw" maxlength="255" autocomplete="off" required />
+                </div>
+                <button id="search-submit">百度一下</button>
+            </div>
+        </form>
+    </section>
+
+    <section id="function">
+        <p id="tips">输入一个问题，然后点击百度一下</p>
+
+        <button id="stop">快停下！我是自己人</button>
+
+        <div id="output">
+            <textarea id="url-output" rows="3" readonly></textarea>
+            <div class="tool-btns">
+                <button data-clipboard-target="#url-output">复制</button>
+                <button id="preview">预览</button>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <ul class="footer-right">
+            <li style="color:khaki;">
+                * 本站与百度公司没有任何联系，本站出现的图标均是百度公司的商标
+            </li>
+            <script type="text/javascript">
+                document.write(
+                    unescape(
+                        "%3Cspan id='cnzz_stat_icon_1279913153'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1279913153%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"
+                    )
+                );
+            </script>
+        </ul>
+    </footer>
+    <script>
+        let infoTxt = "你好，感谢访问本站，本站由艾孜尔江制作，祝您玩的开心玩的愉快～";
+        function typeInfoText(infoStr = "", charIndex = 0) {
+            let logTxtStyle =
+                "font-size:20px;color:orangered;font-weight:bold;";
+            setTimeout(function () {
+                if (charIndex >= infoTxt.length) {
+                    return;
+                }
+                console.clear();
+                infoStr += infoTxt[charIndex];
+                console.log("%c" + infoStr, logTxtStyle);
+                charIndex++;
+                typeInfoText(infoStr, charIndex);
+            }, 100);
+        }
+    </script>
+
+    <div id="arrow"></div>
+</body>
+
+</html>

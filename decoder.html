@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decoder</title>
+</head>
+
+<body>
+    <script>
+        let var1 = '\x67\x6c\x6f\x62\x61\x6c\x53\x74\x72'  // ref: postlog_cn
+        function decode() {
+            document.getElementById('code').value = var1;
+        }
+    </script>
+    <textarea id="code" cols="80" rows="20"></textarea>
+    <input id="ipt" type="button" onclick="decode()" value="Decode">
+</body>
+
+</html>
